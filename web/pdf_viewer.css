@@ -23,13 +23,15 @@
   direction: ltr;
   width: 816px;
   height: 1056px;
-  margin: 1px auto -8px auto;
+  margin: 10px auto 20px auto;
   position: relative;
   overflow: visible;
-  border: 9px solid transparent;
-  background-clip: content-box;
-  border-image: url(images/shadow.png) 9 9 repeat;
+  border: 0 solid transparent;
+  /* background-clip: content-box;
+   border-image: url(images/shadow.png) 9 9 repeat;
+   */
   background-color: white;
+  box-shadow: 0 8px 20px -4px #000;
 }
 
 .pdfViewer.removePageBorders .page {

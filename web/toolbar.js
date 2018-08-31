@@ -140,10 +140,6 @@ class Toolbar {
       eventBus.dispatch('presentationmode');
     });
 
-    items.openFile.addEventListener('click', function() {
-      eventBus.dispatch('openfile');
-    });
-
     items.print.addEventListener('click', function() {
       eventBus.dispatch('print');
     });

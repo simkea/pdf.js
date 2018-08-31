@@ -78,9 +78,9 @@ class PDFSidebar {
     this.eventBus = options.eventBus;
     this.toggleButton = options.toggleButton;
 
-    this.thumbnailButton = options.thumbnailButton;
-    this.outlineButton = options.outlineButton;
-    this.attachmentsButton = options.attachmentsButton;
+    // this.thumbnailButton = options.thumbnailButton;
+    // this.outlineButton = options.outlineButton;
+    // this.attachmentsButton = options.attachmentsButton;
 
     this.thumbnailView = options.thumbnailView;
     this.outlineView = options.outlineView;
@@ -99,8 +99,8 @@ class PDFSidebar {
     this._hideUINotification(null);
     this.switchView(SidebarView.THUMBS);
 
-    this.outlineButton.disabled = false;
-    this.attachmentsButton.disabled = false;
+    // this.outlineButton.disabled = false;
+    // this.attachmentsButton.disabled = false;
   }
 
   /**
@@ -161,13 +161,12 @@ class PDFSidebar {
     }
     let isViewChanged = (view !== this.active);
     let shouldForceRendering = false;
-
     switch (view) {
       case SidebarView.THUMBS:
-        this.thumbnailButton.classList.add('toggled');
-        this.outlineButton.classList.remove('toggled');
-        this.attachmentsButton.classList.remove('toggled');
-
+        // this.thumbnailButton.classList.add('toggled');
+        // this.outlineButton.classList.remove('toggled');
+        // this.attachmentsButton.classList.remove('toggled');
+        //
         this.thumbnailView.classList.remove('hidden');
         this.outlineView.classList.add('hidden');
         this.attachmentsView.classList.add('hidden');
@@ -178,24 +177,24 @@ class PDFSidebar {
         }
         break;
       case SidebarView.OUTLINE:
-        if (this.outlineButton.disabled) {
-          return;
-        }
-        this.thumbnailButton.classList.remove('toggled');
-        this.outlineButton.classList.add('toggled');
-        this.attachmentsButton.classList.remove('toggled');
+        // if (this.outlineButton.disabled) {
+        //  return;
+        // }
+        // this.thumbnailButton.classList.remove('toggled');
+        // this.outlineButton.classList.add('toggled');
+        // this.attachmentsButton.classList.remove('toggled');
 
         this.thumbnailView.classList.add('hidden');
         this.outlineView.classList.remove('hidden');
         this.attachmentsView.classList.add('hidden');
         break;
       case SidebarView.ATTACHMENTS:
-        if (this.attachmentsButton.disabled) {
-          return;
-        }
-        this.thumbnailButton.classList.remove('toggled');
-        this.outlineButton.classList.remove('toggled');
-        this.attachmentsButton.classList.add('toggled');
+        // if (this.attachmentsButton.disabled) {
+        //  return;
+        // }
+        // this.thumbnailButton.classList.remove('toggled');
+        // this.outlineButton.classList.remove('toggled');
+        // this.attachmentsButton.classList.add('toggled');
 
         this.thumbnailView.classList.add('hidden');
         this.outlineView.classList.add('hidden');
@@ -330,10 +329,10 @@ class PDFSidebar {
 
     switch (view) {
       case SidebarView.OUTLINE:
-        this.outlineButton.classList.add(UI_NOTIFICATION_CLASS);
+        // this.outlineButton.classList.add(UI_NOTIFICATION_CLASS);
         break;
       case SidebarView.ATTACHMENTS:
-        this.attachmentsButton.classList.add(UI_NOTIFICATION_CLASS);
+        // this.attachmentsButton.classList.add(UI_NOTIFICATION_CLASS);
         break;
     }
   }
@@ -347,14 +346,14 @@ class PDFSidebar {
     }
 
     let removeNotification = (view) => {
-      switch (view) {
-        case SidebarView.OUTLINE:
-          this.outlineButton.classList.remove(UI_NOTIFICATION_CLASS);
-          break;
-        case SidebarView.ATTACHMENTS:
-          this.attachmentsButton.classList.remove(UI_NOTIFICATION_CLASS);
-          break;
-      }
+      // switch (view) {
+      //   case SidebarView.OUTLINE:
+      //     this.outlineButton.classList.remove(UI_NOTIFICATION_CLASS);
+      //     break;
+      //   case SidebarView.ATTACHMENTS:
+      //     this.attachmentsButton.classList.remove(UI_NOTIFICATION_CLASS);
+      //     break;
+      // }
     };
 
     if (!this.isOpen && view !== null) {
@@ -389,26 +388,26 @@ class PDFSidebar {
     });
 
     // Buttons for switching views.
-    this.thumbnailButton.addEventListener('click', () => {
-      this.switchView(SidebarView.THUMBS);
-    });
+    // this.thumbnailButton.addEventListener('click', () => {
+    //   this.switchView(SidebarView.THUMBS);
+    // });
 
-    this.outlineButton.addEventListener('click', () => {
-      this.switchView(SidebarView.OUTLINE);
-    });
-    this.outlineButton.addEventListener('dblclick', () => {
-      this.pdfOutlineViewer.toggleOutlineTree();
-    });
+    // this.outlineButton.addEventListener('click', () => {
+    //   this.switchView(SidebarView.OUTLINE);
+    // });
+    // this.outlineButton.addEventListener('dblclick', () => {
+    //   this.pdfOutlineViewer.toggleOutlineTree();
+    // });
 
-    this.attachmentsButton.addEventListener('click', () => {
-      this.switchView(SidebarView.ATTACHMENTS);
-    });
+    // this.attachmentsButton.addEventListener('click', () => {
+    //   this.switchView(SidebarView.ATTACHMENTS);
+    // });
 
     // Disable/enable views.
     this.eventBus.on('outlineloaded', (evt) => {
       let outlineCount = evt.outlineCount;
 
-      this.outlineButton.disabled = !outlineCount;
+      // this.outlineButton.disabled = !outlineCount;
 
       if (outlineCount) {
         this._showUINotification(SidebarView.OUTLINE);
@@ -421,7 +420,7 @@ class PDFSidebar {
 
     this.eventBus.on('attachmentsloaded', (evt) => {
       if (evt.attachmentsCount) {
-        this.attachmentsButton.disabled = false;
+        // this.attachmentsButton.disabled = false;
 
         this._showUINotification(SidebarView.ATTACHMENTS);
         return;
@@ -437,7 +436,7 @@ class PDFSidebar {
           // FileAttachment annotations were appended to the attachment view.
           return;
         }
-        this.attachmentsButton.disabled = true;
+        // this.attachmentsButton.disabled = true;
 
         if (this.active === SidebarView.ATTACHMENTS) {
           // If the attachment view was opened during document load, switch away

@@ -35,7 +35,7 @@ const defaultOptions = {
   },
   defaultUrl: {
     /** @type {string} */
-    value: 'compressed.tracemonkey-pldi-09.pdf',
+    value: 'E_Bike_Abverkauf_30.8.18_web.pdf',
     kind: OptionKind.VIEWER,
   },
   defaultZoomValue: {
@@ -45,7 +45,7 @@ const defaultOptions = {
   },
   disableHistory: {
     /** @type {boolean} */
-    value: false,
+    value: true,
     kind: OptionKind.VIEWER,
   },
   disablePageLabels: {
