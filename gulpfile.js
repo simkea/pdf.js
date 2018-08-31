@@ -633,8 +633,6 @@ gulp.task('generic', ['buildnumber', 'locale'], function () {
         .pipe(postcss([autoprefixer(AUTOPREFIXER_CONFIG)]))
         .pipe(gulp.dest(GENERIC_DIR + 'web')),
 
-    gulp.src('web/E_Bike_Abverkauf_30.8.18_web.pdf')
-        .pipe(gulp.dest(GENERIC_DIR + 'web')),
   ]);
 });
 
@@ -698,8 +696,6 @@ gulp.task('minified-pre', ['buildnumber', 'locale'], function () {
         .pipe(postcss([autoprefixer(AUTOPREFIXER_CONFIG)]))
         .pipe(gulp.dest(MINIFIED_DIR + 'web')),
 
-    gulp.src('web/E_Bike_Abverkauf_30.8.18_web.pdf')
-        .pipe(gulp.dest(MINIFIED_DIR + 'web')),
   ]);
 });
 

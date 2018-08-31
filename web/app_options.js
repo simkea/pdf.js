@@ -35,7 +35,7 @@ const defaultOptions = {
   },
   defaultUrl: {
     /** @type {string} */
-    value: 'E_Bike_Abverkauf_30.8.18_web.pdf',
+    value: '',
     kind: OptionKind.VIEWER,
   },
   defaultZoomValue: {
